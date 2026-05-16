@@ -1,6 +1,5 @@
 package io.github.marcelosrg.cadastroDeNinjas.model;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,21 +8,20 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 import java.util.UUID;
 
+@Entity(name = "missoes")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity(name = "ninjas")
+public class MissoesModel {
 
-public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String nome;
-    private String email;
-    private int idade;
+    private String dificuldade;
 
-    // @ManyToOne - muitos ninja podem ter apenas uma missao
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="missoes_id") //foreing Key
-    private MissoesModel missao;
+    //@OneToMany -> uma missao pode ter varios ninjas
+    @OneToMany(mappedBy = "missoes",cascade = CascadeType.ALL)
+    private List<NinjaModel> ninjas;
+
 }

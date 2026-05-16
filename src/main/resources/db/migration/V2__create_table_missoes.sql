@@ -1,0 +1,6 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE TABLE missoes(
+    id UUID PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    dificuldade VARCHAR(255) NOT NULL
+)
