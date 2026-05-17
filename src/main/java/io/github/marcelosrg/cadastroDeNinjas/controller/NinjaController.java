@@ -10,7 +10,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@RequestMapping("v1/ninjas/")
+@RequestMapping("/v1/ninjas")
 public class NinjaController {
 
     public final NinjasService ninjasService;
