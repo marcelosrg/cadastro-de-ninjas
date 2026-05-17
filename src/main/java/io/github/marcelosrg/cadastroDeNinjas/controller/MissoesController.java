@@ -30,6 +30,6 @@ public class MissoesController {
                 .buildAndExpand(missoesDto.id())
                 .toUri();
 
-        return ResponseEntity.created(location).build();
+        return ResponseEntity.created(location).body(missoesDto);
     }
 }
