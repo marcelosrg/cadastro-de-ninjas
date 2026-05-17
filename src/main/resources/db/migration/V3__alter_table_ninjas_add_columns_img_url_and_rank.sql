@@ -1,0 +1,3 @@
+ALTER TABLE ninjas
+    ADD COLUMN img_url VARCHAR(255),
+    ADD COLUMN rank VARCHAR(50);
